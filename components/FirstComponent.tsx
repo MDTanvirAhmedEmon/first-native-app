@@ -4,7 +4,7 @@ import React from 'react'
 const FirstComponent = () => {
   return (
     <View>
-      <Text>First Component</Text>
+      <Text style={{ color: 'white'}}>First Component</Text>
     </View>
   )
 }

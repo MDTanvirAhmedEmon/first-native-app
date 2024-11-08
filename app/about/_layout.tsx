@@ -1,24 +1,34 @@
-
 import { Tabs } from 'expo-router';
+import { MaterialIcons } from '@expo/vector-icons'; // Example icon library
+
+
 
 export default function RootLayout() {
     return (
-        <Tabs>
-            {/* The "index" route for the home tab */}
+        <Tabs
+            screenOptions={{headerShown:false}}
+        >
+            {/* The "Contact" route for the home tab */}
             <Tabs.Screen
                 name="about/contact"
                 options={{
-                    headerShown: false,
-                    // tabBarIcon: () => <Icon name="home" size={24} /> // You can replace Icon with any icon from your library
+                    // headerShown: false,
+                    tabBarLabel: 'Contact',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialIcons name="contacts" color={color} size={size} />
+                    ),
                 }}
             />
 
-            {/* The "about" tab */}
+            {/* The "About" tab */}
             <Tabs.Screen
                 name="about/index"
                 options={{
-                    headerShown: false,
-                    // tabBarIcon: () => <Icon name="info" size={24} /> // Example icon
+                    // headerShown: false,
+                    tabBarLabel: 'About',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialIcons name="info" color={color} size={size} />
+                    ),
                 }}
             />
         </Tabs>
