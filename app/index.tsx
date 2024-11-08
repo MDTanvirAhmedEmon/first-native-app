@@ -1,6 +1,6 @@
 import FirstComponent from '@/components/FirstComponent';
 import { Router, useRouter } from 'expo-router';
-import { View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, Button } from 'react-native';
 
 export default function HomeScreen() {
     const router = useRouter();
@@ -12,8 +12,8 @@ export default function HomeScreen() {
                 <View style={styles.overlay}>
                     <View style={styles.contentContainer}>
                         <Text style={styles.text}>Hello Bro</Text>
-                        <FirstComponent />
-                        <Text onPress={() => router.push('/about')} style={styles.linkText}>About</Text>
+                        <FirstComponent/>
+                        <Button title='Click' onPress={() => router.push('/about')}></Button>
                     </View>
                 </View>
             </ImageBackground>
