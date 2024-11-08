@@ -1,13 +1,14 @@
 import FirstComponent from '@/components/FirstComponent';
-import { Link } from '@react-navigation/native';
+import { Link, useRoute } from '@react-navigation/native';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function HomeScreen() {
+    const router = useRoute()
     return (
         <View style={styles.bg}>
             <Text style={styles.text}>Hello Bro</Text>
             <FirstComponent />
-            <Link to={'/about'}>About</Link>
+            <Text onPress={() => router('/about')}>About</Text>
         </View>
     );
 }
