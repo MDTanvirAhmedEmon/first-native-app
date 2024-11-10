@@ -13,6 +13,7 @@ export default function HomeScreen() {
                     <View style={styles.contentContainer}>
                         <Text style={styles.text}>Hello Bro</Text>
                         <FirstComponent/>
+                        <View style={{marginTop: 20}}></View>
                         <Button title='Click' onPress={() => router.push('/about')}></Button>
                     </View>
                 </View>
