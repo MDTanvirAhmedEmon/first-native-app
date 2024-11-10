@@ -1,10 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 
 const Contact = () => {
     return (
-        <View style={styles.bg}>
-            <Text style={styles.text}>Contact</Text>
+        <View style={styles.container}>
+            <ImageBackground style={{ flex: 1, justifyContent: "center" }} resizeMode="cover" source={require('../../assets/images/bg.jpg')}>
+                <View style={styles.overlay}>
+                <Text style={styles.text}>Contact</Text>
+                </View>
+            </ImageBackground>
         </View>
     )
 }
@@ -12,10 +16,11 @@ const Contact = () => {
 export default Contact
 
 const styles = StyleSheet.create({
-    bg: {
-        backgroundColor: "red",
-        height: "100%",
-        width: "100%",
+    container: {
+        flex: 1,
+        overflow: 'hidden', // Prevents overflow scrolling
+    },
+    overlay: {
         alignItems: "center",
         justifyContent: "center",
     },

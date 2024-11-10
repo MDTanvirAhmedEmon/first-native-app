@@ -1,21 +1,33 @@
-import { StyleSheet, Text, View } from 'react-native'
-
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 
 const About = () => {
     return (
-        <View style={styles.bg}>
-            <Text style={styles.text}>About</Text>
+        <View style={styles.container}>
+            <ImageBackground 
+                style={styles.bgImage} 
+                resizeMode="cover" 
+                source={require('../../assets/images/bg.jpg')}
+            >
+                <View style={styles.overlay}>
+                    <Text style={styles.text}>About</Text>
+                </View>
+            </ImageBackground>
         </View>
-    )
+    );
 }
 
-export default About
+export default About;
 
 const styles = StyleSheet.create({
-    bg: {
-        backgroundColor: "green",
-        height: "100%",
-        width: "100%",
+    container: {
+        flex: 1,
+        overflow: 'hidden', // Prevents overflow scrolling
+    },
+    bgImage: {
+        flex: 1,
+        justifyContent: "center", // Centers the content vertically
+    },
+    overlay: {
         alignItems: "center",
         justifyContent: "center",
     },
