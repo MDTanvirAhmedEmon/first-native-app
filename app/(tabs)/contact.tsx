@@ -13,7 +13,7 @@ export default Contact
 
 const styles = StyleSheet.create({
     bg: {
-        backgroundColor: "green",
+        backgroundColor: "red",
         height: "100%",
         width: "100%",
         alignItems: "center",

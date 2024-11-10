@@ -27,6 +27,29 @@ export default function RootLayout() {
                 tabBarInactiveTintColor: '#A9A9A9', // Inactive icon color
             }}
         >
+            {/* The "About" tab */}
+            <Tabs.Screen
+                name="about"
+                options={{
+                    tabBarLabel: () => null,
+                    tabBarIcon: ({ focused }) => (
+                        <View style={{
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: focused ? '#ededed' : 'transparent',
+                            width: 50,
+                            height: 50,
+                            borderRadius: 40, // half of width/height for a full circle
+                        }}>
+                            <Entypo name="grid" size={18} color={focused ? 'black' : '#A9A9A9'} />
+                            <Text style={{ fontSize: 10, color: focused ? 'black' : '#A9A9A9' }}>
+                                About
+                            </Text>
+                        </View>
+                    ),
+                }}
+            />
+            
             {/* The "Contact" route */}
             <Tabs.Screen
                 name="contact"
@@ -50,28 +73,7 @@ export default function RootLayout() {
                 }}
             />
 
-            {/* The "About" tab */}
-            <Tabs.Screen
-                name="about"
-                options={{
-                    tabBarLabel: () => null,
-                    tabBarIcon: ({ focused }) => (
-                        <View style={{
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: focused ? '#ededed' : 'transparent',
-                            width: 50,
-                            height: 50,
-                            borderRadius: 40, // half of width/height for a full circle
-                        }}>
-                            <Entypo name="grid" size={18} color={focused ? 'black' : '#A9A9A9'} />
-                            <Text style={{ fontSize: 10, color: focused ? 'black' : '#A9A9A9' }}>
-                                About
-                            </Text>
-                        </View>
-                    ),
-                }}
-            />
+
         </Tabs>
     );
 }
